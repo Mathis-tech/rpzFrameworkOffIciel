@@ -1,0 +1,35 @@
+[
+    {
+        "jobsDefault": [
+            {
+                "id": 1,
+                "name": "unemployed",
+                "label": "Sans emploi"
+            }
+        ],
+
+        "jobs": [
+            {
+                "id": 1,
+                "name": "police",
+                "label": "Police",
+                "grades": [
+                    {"id": 1, "name": "recruit", "label": "Recrue"},
+                    {"id": 2, "name": "officer", "label": "Officier"},
+                    {"id": 3, "name": "sergeant", "label": "Sergeant"}
+                ]
+            },
+            {
+                "id": 2,
+                "name": "medical",
+                "label": "Services Médicaux",
+                "grades": [
+                    {"id": 1, "name": "intern", "label": "Interne"},
+                    {"id": 2, "name": "doctor", "label": "Docteur"},
+                    {"id": 3, "name": "chief", "label": "Chef de service"}
+                ]
+            }
+        ]
+    }
+    
+]

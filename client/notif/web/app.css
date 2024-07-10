@@ -1,0 +1,57 @@
+#notification {
+    position: relative;
+    max-width: 92px;
+    top: 41vh;
+    max-height: 48px;
+    right: -2vh;
+    background-color: rgb(27, 27, 27, 0.5);
+    padding: 84px;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+    border-radius: 20px;
+    display: none;
+}
+
+#title {
+    position: relative;
+    top: -9vh;
+    left: -2vh;
+    font-size: 18px;
+    color: black;
+}
+
+#subtitle {
+    position: relative;
+    top: -8vh;
+    left: -4vh;
+    font-size: 18px;
+    color: black;
+}
+
+#text {
+    position: relative;
+    top: -8vh;
+    left: -4vh;
+    font-size: 18px;
+    color: black;
+}
+
+
+#red-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* prend toute la largeur de #notification */
+    height: 4px; /* la hauteur de la barre rouge */
+    background-color: red;
+    transform: translateY(-100%); /* commence en dehors de la vue */
+    animation: slideIn 5s linear forwards; /* l'animation pour faire glisser */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}

@@ -1,0 +1,12 @@
+RegisterNetEvent("giveWeapon")
+AddEventHandler("giveWeapon", function(weaponId)
+    GiveWeaponToPed(GetPlayerPed(-1), weaponId, 0, false, true)
+end)
+
+RegisterNetEvent("giveAmmo")
+AddEventHandler("giveAmmo", function(ammoType, count)
+    local playerPed = GetPlayerPed(-1)
+    local ammoHash = GetHashKey(ammoType)
+    print("^0[^1RPZ_Framework^0]Tentative d'ajout de munitions: " .. ammoType .. " avec le hash: " .. ammoHash .. " en quantité de: " .. count)
+    AddAmmoToPed(playerPed, ammoHash, count)
+end)

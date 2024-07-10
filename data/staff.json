@@ -1,0 +1,14 @@
+[
+    {
+        "staff": [
+            {"name": "user", "permission_level": 1},
+            {"name": "helper", "permission_level": 3},
+            {"name": "moderator", "permission_level": 4},
+            {"name": "administrator", "permission_level": 5},
+            {"name": "superadmin", "permission_level": 6},
+            {"name": "owner", "permission_level": 7}
+        ]
+    }
+    
+    
+]

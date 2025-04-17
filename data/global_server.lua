@@ -1,14 +1,16 @@
-RPZ = RPZ or {}
+RPZ = {}
 
 RPZ.Config = {}
 
 RPZ.ConfigGlobal = {
     spawnPrincipal = {
-        X = 466.8401,
-        Y = 197.7201,
-        Z = 111.5291
+        X = -207.24,
+        Y = -1016.59,
+        Z = 30.14
     }
 }
+
+RPZ.PedDefault = "mp_m_freemode_01" -- le ped defaut est un ped au quel tout les joueurs seront forcer à spawn avec
 
 RPZ.Levels = {
     { level = 1, xpRequired = 250, difficulty = "low" },

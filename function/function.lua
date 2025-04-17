@@ -6,7 +6,7 @@
 ------------------------------------------------------------------------------
 
 local CanCancelEmote = true
-
+RPZ = RPZ or {}
 -- Server Callback
 
 ServerCallbacks = {}
@@ -32,7 +32,14 @@ end)
 
 -- Advanced Notif
 
-function AdvancedNotif(title, subtitle, msg, img1, img2)
+RPZ.ShowNotification = function(title, subtitle, msg, img1, img2)
+    SetNotificationTextEntry("STRING")
+    AddTextComponentSubstringPlayerName(msg)
+    SetNotificationMessage(img1, img2, true, 0, title, subtitle)
+    DrawNotification(false, true)
+end
+
+RPZ.AdvancedNotif = function(title, subtitle, msg, img1, img2)
     SetNotificationTextEntry("STRING")
     AddTextComponentSubstringPlayerName(msg)
     SetNotificationMessage(img1, img2, true, 0, title, subtitle)
@@ -49,7 +56,7 @@ end)
 
 -- Help Notification
 
-function HelpNotif(msg)
+RPZ.HelpNotif = function(msg)
     AddTextEntry('InitialCoreHelpNotification', msg)
 	BeginTextCommandDisplayHelp('InitialCoreHelpNotification')
     EndTextCommandDisplayHelp(0, false, true, -1)
@@ -123,7 +130,7 @@ end)
 
 -- GET CLOSEST PLAYER
 
-GetClosestPlayer = function(coords)
+RPZ.GetClosestPlayer = function(coords)
 	local players, closestDistance, closestPlayer = GetPlayers(), -1, -1
 	local coords, usePlayerPed = coords, false
 	local playerPed, playerId = PlayerPedId(), PlayerId()
@@ -152,7 +159,7 @@ GetClosestPlayer = function(coords)
 	return closestPlayer, closestDistance
 end
 
-GetPlayers = function()
+RPZ.GetPlayers = function()
     local players = {}
 
     for _,player in ipairs(GetActivePlayers()) do
@@ -167,7 +174,7 @@ GetPlayers = function()
 end
 
 
-GetPlayersInArea = function(coords, area)
+RPZ.GetPlayersInArea = function(coords, area)
 	local players, playersInArea = GetPlayers(), {}
 	coords = vector3(coords.x, coords.y, coords.z)
 
@@ -183,7 +190,7 @@ GetPlayersInArea = function(coords, area)
 	return playersInArea
 end
 
-GetPedsInArea = function(coords, area)
+RPZ.GetPedsInArea = function(coords, area)
 	local TableP = {}
     local TableID = 1
     local handle, ped = FindFirstPed()
@@ -197,7 +204,7 @@ GetPedsInArea = function(coords, area)
     return TableP
 end
 
-GetVehicleInArea = function(coords, area)
+RPZ.GetVehicleInArea = function(coords, area)
     local TableC = {}
     local TableID = 1
     local handle, veh = FindFirstVehicle()
@@ -365,3 +372,4 @@ function TimeOnServer()
         })
     end    
 end
+

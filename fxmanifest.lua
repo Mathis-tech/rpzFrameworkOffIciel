@@ -3,14 +3,13 @@ fx_version 'adamant'
 game 'gta5'
 lua54 'yes'
 
-ui_page 'client/notif/web/index.html'
+ui_page ''
 
 files {
-    'client/notif/web/index.html',
-    'client/notif/web/app.js',
-    'client/notif/web/app.css'
+
 }
 client_scripts {
+    "client/modules/init/main.lua",
     "function/function.lua",
     "src/RMenu.lua",
     "src/menu/RageUI.lua",
@@ -22,34 +21,39 @@ client_scripts {
     "src/menu/panels/*.lua",
     "src/menu/panels/*.lua",
     "src/menu/windows/*.lua",
-    "client/utils/*.lua",
-    "client/items/*.lua",
-    "client/event/*.lua",
+    "client/modules/weapon/weapon.lua",
+    "client/modules/gta/NativePNJ.lua",
+    "client/modules/utils/*.lua",
+    "client/modules/game/*.lua",
+    "client/modules/items/*.lua",
     "client/modules/*.lua",
-    "client/players/*.lua",
-    "client/spawned/*.lua",
-    "client/status/*.lua",
-    "ui/client/*.lua",
-    "client/notif/client/main.lua",
-    "client/notif/web/app.js",
+    "client/modules/players/*.lua",
+    "client/modules/spawned/*.lua",
+    "client/modules/status/*.lua",
+    "client/modules/notif/client/main.lua",
+    "client/modules/notif/web/app.js",
 
 
 }
 
 server_scripts {
     "@oxmysql/lib/MySQL.lua",
-    'function/init.lua',
+    "server/modules/init/main.lua",
+    'function/jsp.lua',
     'function/*.lua',
-    'server/functions/death.lua',
-    "server/modules/*.lua",
-    "server/players/NewPlayer.lua",
-    "server/players/*.lua",
+    'server/modules/functions/death.lua',
+    "server/modules/functions/GetPlayerData.lua",
+    "server/modules/functions/death.lua",
+    "server/modules/functions/GetHealth.lua",
+    "server/modules/players/NewPlayer.lua",
+    "server/modules/players/PlayerDataManager.lua",
+    "server/modules/players/SavePlayers.lua",
+    "server/modules/players/sync.lua",
+    "server/modules/spawned/SpawnPlayer.lua",
     'data/loadDB.lua',
-    "server/event/*.lua",
-    "server/spawned/*.lua",
-    "server/players/*.lua",
-    "server/status/*.lua",
-    "ui/server/*.lua",
+    "server/modules/spawned/*.lua",
+    "server/modules/status/*.lua"
+
 
 }
 
@@ -57,4 +61,4 @@ shared_script {
     'data/global_server.lua',
 }
 
-exports {"Draw3DTextPermanent", "Draw3DText", "Draw3DTextTimeout"}
+exports {"RPZ", "Draw3DTextPermanent", "Draw3DText", "Draw3DTextTimeout", "GetPlayerUID", "RegisterServerCallback"}

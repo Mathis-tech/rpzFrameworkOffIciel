@@ -1,29 +1,16 @@
--- function GetPlayerIdentifier(source)
---     local identifiers = GetPlayerIdentifiers(source)
---     for _, id in ipairs(identifiers) do
---         print("Checking identifier: " .. id)  -- Débogage de chaque identifiant
---         if string.match(id, "license:") then
---             print("Fivem license found: " .. id)  -- Débogage lorsque la licence est trouvée
---             return id
---         end
---     end
---     print("No valid license identifier found for source: " .. source)  -- Débogage si aucun identifiant valide n'est trouvé
---     return nil
--- end
+--  function GetPlayerIdentifier(source)
+--      local identifiers = GetPlayerIdentifiers(source)
+--      for _, id in ipairs(identifiers) do
+--          print("Checking identifier: " .. id)  -- Débogage de chaque identifiant
+--          if string.match(id, "license:") then
+--              print("Fivem license found: " .. id)  -- Débogage lorsque la licence est trouvée
+--              return id
+--          end
+--      end
+--      print("No valid license identifier found for source: " .. source)  -- Débogage si aucun identifiant valide n'est trouvé
+--      return nil
+--  end
 
--- function GetPlayerUID(identifier, callback)
---     MySQL.Async.fetchScalar("SELECT uid FROM rpz_players WHERE fivem_license = @identifier", {
---         ['@identifier'] = identifier
---     }, function(uid)
---         if uid then
---             print("UID found: " .. uid)  -- Débogage lorsque l'UID est trouvé
---             callback(uid)
---         else
---             print("No UID found for identifier: " .. identifier)  -- Débogage si aucun UID n'est trouvé
---             callback(nil)
---         end
---     end)
--- end
 
 
 -- function AddPlayerXP(source, xpAmount)
